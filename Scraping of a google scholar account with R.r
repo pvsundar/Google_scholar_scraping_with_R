@@ -13,7 +13,7 @@ barplot(citations,main="How many times has each paper been cited?",
 
 page <- read_html("https://scholar.google.com/citations?view_op=list_colleagues&hl=en&user=sTR9SIQAAAAJ")
 
-Coauthors = page%>% html_nodes(css = ".gsc_1usr_name a")%>%html_text()
+Coauthors = page%>% html_nodes(css = ".gsc_1usr_name , a")%>%html_text()
 Coauthors=as.data.frame(Coauthors)
 names(Coauthors)='Coauthors'
 
